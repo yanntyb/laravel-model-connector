@@ -1,15 +1,13 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector;
+namespace Yanntyb\ModelConnector;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Gate;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Yanntyb\LaravelModelConnector\Commands\LaravelModelConnectorCommand;
+use Yanntyb\ModelConnector\Commands\ModelConnectorCommand;
 
-class LaravelModelConnectorServiceProvider extends PackageServiceProvider
+class ModelConnectorServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -23,7 +21,7 @@ class LaravelModelConnectorServiceProvider extends PackageServiceProvider
             ->hasConfigFile('model-connector')
             ->hasViews()
             ->hasMigration('create_model_connector_table')
-            ->hasCommand(LaravelModelConnectorCommand::class)
+            ->hasCommand(ModelConnectorCommand::class)
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command
                     ->publishConfigFile()

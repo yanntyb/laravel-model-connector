@@ -1,6 +1,6 @@
 <?php
 
-// config for Yanntyb/LaravelModelConnector
+// config for Yanntyb/ModelConnector
 return [
     'table' => 'model_connector',
 ];

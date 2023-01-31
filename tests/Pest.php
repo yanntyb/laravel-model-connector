@@ -1,5 +1,5 @@
 <?php
 
-use Yanntyb\LaravelModelConnector\Tests\TestCase;
+use Yanntyb\ModelConnector\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

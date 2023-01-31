@@ -1,10 +1,10 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Tests;
+namespace Yanntyb\ModelConnector\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Yanntyb\LaravelModelConnector\LaravelModelConnectorServiceProvider;
+use Yanntyb\ModelConnector\ModelConnectorServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Yanntyb\\LaravelModelConnector\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Yanntyb\\ModelConnector\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            LaravelModelConnectorServiceProvider::class,
+            ModelConnectorServiceProvider::class,
         ];
     }
 

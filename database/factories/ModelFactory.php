@@ -1,6 +1,6 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Database\Factories;
+namespace Yanntyb\ModelConnector\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 

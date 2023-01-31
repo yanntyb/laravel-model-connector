@@ -1,6 +1,6 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Connector;
+namespace Yanntyb\ModelConnector\Connector;
 
 
 use App\Models\File\Connector\AbstractFileConnector;

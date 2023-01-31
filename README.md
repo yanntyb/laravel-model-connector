@@ -52,8 +52,8 @@ php artisan vendor:publish --tag="laravel-model-connector-views"
 ## Usage
 
 ```php
-$laravelModelConnector = new Yanntyb\LaravelModelConnector();
-echo $laravelModelConnector->echoPhrase('Hello, Yanntyb!');
+$ModelConnector = new Yanntyb\ModelConnector();
+echo $ModelConnector->echoPhrase('Hello, Yanntyb!');
 ```
 
 ## Testing

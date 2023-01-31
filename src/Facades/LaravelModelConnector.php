@@ -1,16 +1,16 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Facades;
+namespace Yanntyb\ModelConnector\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Yanntyb\LaravelModelConnector\LaravelModelConnector
+ * @see \Yanntyb\ModelConnector\ModelConnector
  */
-class LaravelModelConnector extends Facade
+class ModelConnector extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return \Yanntyb\LaravelModelConnector\LaravelModelConnector::class;
+        return \Yanntyb\ModelConnector\ModelConnector::class;
     }
 }

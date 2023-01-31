@@ -4,7 +4,7 @@
     "keywords": [
         "yanntyb",
         "laravel",
-        "laravel-model-connector"
+        "model-connector"
     ],
     "homepage": "https://github.com/yanntyb/laravel-model-connector",
     "license": "MIT",
@@ -34,13 +34,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Yanntyb\\LaravelModelConnector\\": "src",
-            "Yanntyb\\LaravelModelConnector\\Database\\Factories\\": "database/factories"
+            "Yanntyb\\ModelConnector\\": "src",
+            "Yanntyb\\ModelConnector\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Yanntyb\\LaravelModelConnector\\Tests\\": "tests"
+            "Yanntyb\\ModelConnector\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -60,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Yanntyb\\LaravelModelConnector\\LaravelModelConnectorServiceProvider"
+                "Yanntyb\\ModelConnector\\ModelConnectorServiceProvider"
             ],
             "aliases": {
-                "LaravelModelConnector": "Yanntyb\\LaravelModelConnector\\Facades\\LaravelModelConnector"
+                "ModelConnector": "Yanntyb\\ModelConnector\\Facades\\ModelConnector"
             }
         }
     },

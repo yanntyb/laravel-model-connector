@@ -1,10 +1,10 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Commands;
+namespace Yanntyb\ModelConnector\Commands;
 
 use Illuminate\Console\Command;
 
-class LaravelModelConnectorCommand extends Command
+class ModelConnectorCommand extends Command
 {
     public $signature = 'laravel-model-connector';
 

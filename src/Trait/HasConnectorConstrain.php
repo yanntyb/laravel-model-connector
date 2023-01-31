@@ -1,11 +1,10 @@
 <?php
 
-namespace Yanntyb\LaravelModelConnector\Trait;
+namespace Yanntyb\ModelConnector\Trait;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Gate;
-use Yanntyb\LaravelModelConnector\Connector\Model\Connector;
-
+use Yanntyb\ModelConnector\Connector\Model\Connector;
 
 trait HasConnectorConstrain
 {
