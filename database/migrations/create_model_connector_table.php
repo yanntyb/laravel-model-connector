@@ -6,9 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    private string $table;
+
+    public function __construct()
+    {
+        $this->table = config('table');
+    }
+
     public function up()
     {
-        Schema::create('laravel_model_connector_table', function (Blueprint $table) {
+        Schema::create($this->table, function (Blueprint $table) {
             $table->id();
             $table->string('model');
             $table->integer('model_id');
@@ -16,5 +23,10 @@ return new class extends Migration
             $table->json('connected_data')->nullable();
             $table->timestamps();
         });
+    }
+
+    public function down()
+    {
+        Schema::drop($this->table);
     }
 };
