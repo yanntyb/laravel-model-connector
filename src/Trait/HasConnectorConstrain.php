@@ -27,8 +27,8 @@ trait HasConnectorConstrain
     /**
      * @return HasMany
      */
-    public function connector(): HasMany
+    public function connectors(): HasMany
     {
-        return $this->hasMany(Connector::class,'model_id',$this->primaryKey);
+        return $this->hasMany(Connector::class,'model_id',$this->primaryKey)->where('model', self::class);
     }
 }
