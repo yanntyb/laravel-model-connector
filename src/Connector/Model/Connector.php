@@ -2,6 +2,7 @@
 
 namespace Yanntyb\ModelConnector\Connector\Model;
 
+use Illuminate\Database\Eloquent\Casts\AsCollection;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -16,6 +17,11 @@ class Connector extends Model implements ModelConnectorInterface
 {
 
     protected $guarded = [];
+
+    protected $casts = [
+        'connected_with' => AsCollection::class,
+        'connected_data' => AsCollection::class,
+    ];
 
     public function __construct(array $attributes = [])
     {
