@@ -17,9 +17,11 @@ class LaravelModelConnectorServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-model-connector')
-            ->hasConfigFile()
+            ->hasConfigFile('model-connector')
             ->hasViews()
-            ->hasMigration('create_laravel-model-connector_table')
-            ->hasCommand(LaravelModelConnectorCommand::class);
+            ->hasMigration('create_model_connector_table')
+            ->hasCommand(LaravelModelConnectorCommand::class)
+            ->runsMigrations()
+        ;
     }
 }
