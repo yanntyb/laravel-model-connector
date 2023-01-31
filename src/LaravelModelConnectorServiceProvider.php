@@ -19,7 +19,7 @@ class LaravelModelConnectorServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('laravel-model-connector')
+            ->name('model-connector')
             ->hasConfigFile('model-connector')
             ->hasViews()
             ->hasMigration('create_model_connector_table')
