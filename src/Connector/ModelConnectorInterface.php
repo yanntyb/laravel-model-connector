@@ -3,7 +3,6 @@
 namespace Yanntyb\ModelConnector\Connector;
 
 
-use App\Models\File\Connector\AbstractFileConnector;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Collection;
 
@@ -13,7 +12,7 @@ interface ModelConnectorInterface
     public function canBeAccessed(): bool;
 
     /**
-     * @return ?Collection<AbstractFileConnector>
+     * @return ?Collection<AbstractModelConnector>
      */
     public function getConnectorsAttribute(): ?Collection;
 

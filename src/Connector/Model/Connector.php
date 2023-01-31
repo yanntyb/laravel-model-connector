@@ -2,11 +2,10 @@
 
 namespace Yanntyb\ModelConnector\Connector\Model;
 
-use App\Models\File\Connector\AbstractFileConnector;
-use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Yanntyb\ModelConnector\Connector\AbstractModelConnector;
 use Yanntyb\ModelConnector\Connector\ModelConnectorInterface;
 
 /**
@@ -22,7 +21,7 @@ class Connector extends Model implements ModelConnectorInterface
     }
 
     /**
-     * @return ?Collection<AbstractFileConnector>
+     * @return ?Collection<AbstractModelConnector>
      */
     public function getConnectorsAttribute(): ?Collection
     {

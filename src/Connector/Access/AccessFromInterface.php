@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\File\Connector\Access;
+namespace Yanntyb\ModelConnector\Connector\Access;
 
 use Illuminate\Http\Client\Request;
 
