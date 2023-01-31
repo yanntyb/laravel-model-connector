@@ -2,15 +2,18 @@
 
 namespace Yanntyb\LaravelModelConnector\Trait;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Gate;
 use Yanntyb\LaravelModelConnector\Connector\Model\Connector;
 
 
-class HasConnectorConstrain extends Model
+trait HasConnectorConstrain
 {
 
+    /**
+     * Mean to be used in Model classes
+     * @param array $attributes
+     */
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
