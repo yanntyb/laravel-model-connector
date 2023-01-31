@@ -4,6 +4,7 @@ namespace Yanntyb\LaravelModelConnector;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
+use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Yanntyb\LaravelModelConnector\Commands\LaravelModelConnectorCommand;
@@ -23,13 +24,21 @@ class LaravelModelConnectorServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_model_connector_table')
             ->hasCommand(LaravelModelConnectorCommand::class)
-            ->runsMigrations()
-        ;
+            ->hasInstallCommand(function(InstallCommand $command) {
+                $command
+                    ->publishConfigFile()
+                    ->publishMigrations()
+                    ->askToRunMigrations()
+                    ->copyAndRegisterServiceProviderInApp()
+                    ->endWith(function(InstallCommand $command) {
+                        $command->info('Have a great day!');
+                    });
+            });
     }
 
     public function boot()
     {
-        Gate::define('access-file', function (Model $model) {
+        Gate::define('access-model', function (Model $model) {
             return $model->connector->canBeAccessed();
         });
     }
