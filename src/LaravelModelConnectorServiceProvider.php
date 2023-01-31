@@ -24,6 +24,7 @@ class LaravelModelConnectorServiceProvider extends PackageServiceProvider
             ->hasViews()
             ->hasMigration('create_model_connector_table')
             ->hasCommand(LaravelModelConnectorCommand::class)
+            ->publishesServiceProvider('LaravelModelConnectorServiceProvider')
             ->hasInstallCommand(function(InstallCommand $command) {
                 $command
                     ->publishConfigFile()
