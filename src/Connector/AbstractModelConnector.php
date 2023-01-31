@@ -8,21 +8,21 @@ use Yanntyb\ModelConnector\Connector\Access\AccessFromInterface;
 
 abstract class AbstractModelConnector implements AccessFromInterface
 {
-    private Model $model;
+    private ?Model $model;
 
 
-    public function __construct(Model $model)
+    public function __construct(?Model $model)
     {
         $this->setModelInstance($model);
     }
 
-    public function setModelInstance(Model $model): static
+    public function setModelInstance(?Model $model): static
     {
         $this->model = $model;
         return $this;
     }
 
-    public function getModelInstance(): Model
+    public function getModelInstance(): ?Model
     {
         return $this->model;
     }

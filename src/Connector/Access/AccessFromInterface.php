@@ -2,8 +2,6 @@
 
 namespace Yanntyb\ModelConnector\Connector\Access;
 
-use Illuminate\Http\Client\Request;
-
 interface AccessFromInterface
 {
     public function canBeAccessed(): bool;
