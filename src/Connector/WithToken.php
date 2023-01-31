@@ -9,15 +9,15 @@ class WithToken extends AbstractModelConnector
 {
 
     /**
-     * @param string|null $url
+     * @param string|null $token
      * @return array
      */
     #[ArrayShape(['token' => "string"])]
-    public static function getConnectedData(string $url = null): array
+    public static function getConnectedData(string $token = null): array
     {
         App::make(WithToken::class)->getClientUrl();
         return [
-            'token' => $url ?: App::make(WithToken::class)->getTokenFromRequest(),
+            'token' => $token ?: App::make(WithToken::class)->getTokenFromRequest(),
         ];
     }
 
