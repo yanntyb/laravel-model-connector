@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('laravel_model_connector_table', function (Blueprint $table) {
             $table->id();
-            $table->string('model')
+            $table->string('model');
             $table->integer('model_id');
             $table->json('connected_with');
             $table->json('connected_data')->nullable();
