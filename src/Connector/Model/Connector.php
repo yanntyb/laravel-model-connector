@@ -14,6 +14,9 @@ use Yanntyb\ModelConnector\Connector\ModelConnectorInterface;
  */
 class Connector extends Model implements ModelConnectorInterface
 {
+
+    protected $guarded = [];
+
     public function __construct(array $attributes = [])
     {
         $this->table = config('model-connector.table');
