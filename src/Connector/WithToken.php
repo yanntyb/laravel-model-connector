@@ -1,51 +1,45 @@
 <?php
-//
-//namespace Yanntyb\ModelConnector\Connector;
-//
-//use Illuminate\Support\Facades\App;
-//use JetBrains\PhpStorm\ArrayShape;
-//use JetBrains\PhpStorm\Pure;
-//
-//class WithToken extends ModelConnectorInterface
-//{
-//    /**
-//     * @param bool $post Set false if Token has to be query from GET request
-//     * @return array
-//     */
-//    #[ArrayShape(['token' => "string", 'fromGet' => 'boolean'])]
-//    public static function getConnectedData(bool $post = true): array
-//    {
-//        return [
-//            'token' => [
-//                'value' => App::make(WithToken::class)->getTokenFromRequest($post),
-//                'post' => $post,
-//            ],
-//        ];
-//    }
-//
-//    /**
-//     * @return bool
-//     */
-//    public function canBeAccessed(): bool
-//    {
-//        return $this->getFileInstance()->connected_data['token']['value'] ===  ($this->getRequestValue('token') ?? null);
-//    }
-//
-//    /**
-//     * @param bool $post
-//     * @return mixed
-//     */
-//    public function getTokenFromRequest(bool $post = true): mixed
-//    {
-//        return $this->getRequestValue('token', $post);
-//    }
-//
-//    /**
-//     * Return false if fromGet isnt set in this File instance's connector data
-//     * @return bool
-//     */
-//    public function fromPostData(): bool
-//    {
-//        return $this->getFileInstance()->connected_data['token']['post'] ?? false;
-//    }
-//}
+
+namespace Yanntyb\ModelConnector\Connector;
+
+use Illuminate\Support\Facades\App;
+use JetBrains\PhpStorm\ArrayShape;
+
+class WithToken extends AbstractModelConnector
+{
+
+    /**
+     * @param string|null $url
+     * @return array
+     */
+    #[ArrayShape(['token' => "string"])]
+    public static function getConnectedData(string $url = null): array
+    {
+        App::make(WithToken::class)->getClientUrl();
+        return [
+            'token' => $url ?: App::make(WithToken::class)->getTokenFromRequest(),
+        ];
+    }
+
+    /**
+     * @return bool
+     */
+    public function canBeAccessed(): bool
+    {
+        return $this->getModelInstance()->connector->connected_data['token'] === $this->getTokenFromRequest();
+    }
+
+    /**
+     * Url set is incoming request client url
+     * @return string|null
+     */
+    public function getTokenFromRequest(): ?string
+    {
+        return $this->getRequestValue('token');
+    }
+
+    public function fromPostData(): bool
+    {
+        return false;
+    }
+}
