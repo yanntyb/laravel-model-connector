@@ -10,7 +10,7 @@ return new class extends Migration
 
     public function __construct()
     {
-        $this->table = config('table');
+        $this->table = config('model-connector.table');
     }
 
     public function up()
